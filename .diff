@@ -3,3 +3,6 @@ https://code.google.com/p/commons-eid/
 which is released under LGPL license, we’ve made some minor modifications. An overview can be found here:
 
 v1.0.0
+- in BEIDCard.java: changed all the smartcard framework specific classes to com.precisebiometrics.android.mtk.api classes for Android (old code is still in there, commented)
+- in BEIDCard.java wrapped the result of a pinrequest in a Parcelable PinResult for Android
+- in DateOfBirthDataConverter.java surrounded the entire parsing with a try catch. If it fails, it just returns a standard calendar response. Otherwise, the entire library would crash on Android.
